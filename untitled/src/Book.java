@@ -25,10 +25,19 @@ public class Book {
     enum  Status{LENDING,READY,BINDING;}
 
     public void setBook_Status(String status){Book_Status = Status.valueOf(status.toUpperCase());}
-    public Book(String Bookname,String Publisher){
+
+    public Book(String Bookname,String Publisher)
+    {
         this.Bookprice=0;
         this.Bookname = Bookname;
         this.Publisher=Publisher;
+    }
+
+    public void To_String()
+    {
+
+        System.out.printf(" Book Title: %s \n Book Publisher: %s \n Book Price: %d \n Book Status: %s \n "  ,Bookname,Publisher,Bookprice,Book_Status);
+
     }
 
     public Book(String Bookname,String Publisher,Integer Bookprice){
@@ -40,7 +49,8 @@ public class Book {
     public static void main(String[] args) {
         Book b1 = new Book("Golestan","Hafez Shirazi",48000);
         b1.setBook_Status("READY");
-        System.out.printf("%s - %s - %s ",b1.getBookname(),b1.getPublisher(),b1.getBook_Status());
+        //System.out.printf("%s - %s - %s ",b1.getBookname(),b1.getPublisher(),b1.getBook_Status());
+        b1.To_String();
     }
 
 
